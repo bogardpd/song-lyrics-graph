@@ -54,7 +54,7 @@ def main(argv):
     with open(lyrics_file) as f:
         lyrics = f.read().lower()
         # Filter out text in [brackets], and punctuation except apostrophes:
-        lyrics = re.sub(r"\[.*\]|[\.,!\"\(\)]", "", lyrics)
+        lyrics = re.sub(r"\[.*\]|[\.,!\?\"\(\):]", "", lyrics)
         lyrics = lyrics.split()
 
     lyric_counts = Counter(lyrics)
