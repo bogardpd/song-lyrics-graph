@@ -111,10 +111,14 @@ def main(argv):
         })
         d9 = xml.SubElement(edge, "data", key="d9")
         ple = xml.SubElement(d9, xml.QName(NSMAP['y'], "PolyLineEdge"))
-        line = xml.SubElement(ple, xml.QName(NSMAP['y'], "LineStyle"), **{
+        xml.SubElement(ple, xml.QName(NSMAP['y'], "LineStyle"), **{
             'type': "line",
             'color': STYLES['edge']['color'],
-            'width': str(STYLES['edge']['width']),
+            'width': str(STYLES['edge']['width'])
+        })
+        xml.SubElement(ple, xml.QName(NSMAP['y'], "Arrows"), **{
+            'source': "none",
+            'target': "standard"
         })
 
     # Write XML file:
